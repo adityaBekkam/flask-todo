@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <title>Heimdall</title>
+        <script type="text/javascript" src="/v2/static/externalJS/jquery-1.12.0.min.js"></script>
+        <script src="/v2/static/externalJS/riot+compiler.js"></script>
+        <link rel="stylesheet" type="text/css" href="/v2/static/externalUX.css" />
+        <link rel="stylesheet" type="text/css" href="/v2/static/semantic/dist/semantic.min.css" />
+        <script type="text/javascript" src="/v2/static/semantic/dist/semantic.min.js"></script>
+
+        <!-- jQuery Query Builder imports -->
+        <link rel="stylesheet" type="text/css" href="/v2/static/css/query-builder.default.min.css" />
+        <link rel="stylesheet" type="text/css" href="/v2/static/css/queryBuilder.css" />
+        <script type="text/javascript" src="/v2/static/externalJS/doT.min.js"></script>
+        <script type="text/javascript" src="/v2/static/externalJS/jQuery.extendext.min.js"></script>
+        <script type="text/javascript" src="/v2/static/externalJS/moment.js"></script>
+        <script type="text/javascript" src="/v2/static/externalJS/query-builder-minimal.js"></script>
+        <!-- End -->
+
+        <script type="riot/tag" src="/v2/static/tags/heimdall.tag"></script>
+        <script type="riot/tag" src="/v2/static/tags/modifyHome.tag"></script>
+        <script type="riot/tag" src="/v2/static/tags/addHome.tag"></script>
+        <script type="riot/tag" src="/v2/static/tags/admin.tag"></script>
+        <script type="riot/tag" src="/v2/static/tags/conditions_modify.tag"></script>
+        <script>riot.mount( 'home', { user:"{{current_user.email}}" }  )</script>
+    </head>
+
+    <body>
+        <home></home>
+    </body>
+
+</html>

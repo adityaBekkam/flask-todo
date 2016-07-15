@@ -1,0 +1,7 @@
+The following assumptions were made from back end while implementing this UI.
+    1. A new field 'display_text' will be present for every constraint.
+    2. Every constraint which is displayed in the builder will have its complimentary constraint.
+       Eg: If 'enable_for_city' is a constraint, then 'disable_for_city' should also be one of the constraint.
+       note: This isn't required for 'enable_for_city'
+    3. An api is required which gives all the enabled primary keys for a feature.
+    4. All features are expected to have the constraint 'enable_for_count'

@@ -1,0 +1,89 @@
+.rules-group-container {
+    padding: 20px !important;
+    background: white !important;
+    border-radius: 2px !important;
+}
+
+.rule-container {
+    padding: 10px !important;
+}
+
+.ui.form input:not([type]), .ui.form input[type=text], .ui.form input[type=email], .ui.form input[type=search], .ui.form input[type=password], .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=tel], .ui.form input[type=time], .ui.form input[type=url], .ui.form input[type=number] {
+    font-family: monospace,Lato,'Helvetica Neue',Arial,Helvetica,sans-serif !important;
+}
+
+.ui.menu .active.item {
+    background-color: rgba(0,0,0,0) !important;
+    border-bottom: 1px solid black !important;
+}
+
+.ui.borderless.stackable.menu {
+    border: none !important;
+}
+
+#progress, #errors {
+    position:fixed !important ;
+    text-align: center !important ;
+    left:0px !important ;
+    bottom:-17px !important ;
+    height:60px !important;
+    width:100% !important ;
+    font-size: 15px !important;
+}
+
+.ui.radio.form .inline.fields{
+    margin: auto !important;
+}
+
+.query-builder .rules-group-container{
+    border: 1px solid #d4d4d5 !important;
+}
+
+.query-builder .rule-value-container input[type=number], .query-builder .rule-value-container input[type=text], .query-builder .rule-value-container input[type=textarea], .query-builder .rule-value-container select{
+    padding: 7px !important;
+}
+
+.ui.basic.grey.button {
+    border: none !important;
+    outline: none !important;
+}
+
+body {
+    font-size: 20px;
+}
+
+#text {
+    font-size: 20px;
+}
+
+#keyItems {
+    font-size: 20px;
+}
+
+
+#builder {
+    /* background-color: #ffffcc; */
+}
+
+#chose {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#divider {
+    padding-top: 20px;
+}
+
+#conditions1 {
+    padding-top: 20px;
+    padding-left: 30px ;
+}
+
+#owners {
+    padding-top: 20px;
+    padding-left: 30px ;
+}
+
+#keysList {
+    font-size: 15px ;
+}
