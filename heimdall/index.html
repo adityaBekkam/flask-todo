@@ -1,1 +1,101 @@
+<html ng-app="heimdall" ng-controller="heimdallController">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="/static/css/select2.css">
+        <link rel="stylesheet" href="/static/css/common.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="stylesheet" href="/static/css/angular-material.min.css">
+        
+        <link rel="icon" 
+          type="image/png" 
+          href="http://www.pen-and-sword.co.uk/assets/img/logo/penandsword-logo.png">
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.js"></script>
+        <script src="/static/js/angular-material.min.js"></script>
+        <script src="/static/js/angular-route.js"></script>
+        <script src="/static/js/select2.full.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular-animate.min.js"></script>
+        <script src="https://cdn.rawgit.com/angular-ui/ui-select/master/dist/select.min.js"></script>
+        
+        <script src="/static/js/main.js"></script>
+        <script>
+          var cities = {{ cities|safe }};
+          var admins = {{ admins|safe }};
+          var current_user_email = "{{ current_user_email }}";
+
+        </script>
+      </head>
+   <body layout="horizontal" >
+    {% raw %}
+      <material-sidenav layout="vertical" 
+                class="material-sidenav-left material-whiteframe-z3" 
+                component-id="left">
+
+        <material-toolbar class="material-theme-light material-medium-tall">
+          <h1 class="material-toolbar-tools" style="padding-top:25px;">
+            <a href="#" ng-click="goHome()">Heimdall<br/>Practo's Gatekeeper</a>
+          </h1>
+
+        </material-toolbar>
+
+        <material-content flex>
+          <material-toolbar scroll-shrink="" class="material-theme-orange features-tab" style="padding-top: 16px; text-align: center;">
+            <div flex>Features</div>
+            <div class="material-toolbar-tools" layout="horizontal" style="padding:0px">
+              <div flex layout="horizontal" style="height:30px;margin-top:10px;margin-left: 0px;margin-right: 0px;">
+                <material-tabs center>
+                  <material-tab lable="Ray Features" ng-click="go('/ray_features_list')" active="state == '/ray_features_list'">Ray</material-tab>
+                  <material-tab lable="Fabric Features" ng-click="go('/fabric_features_list')" active="state == '/fabric_features_list'">Fabric</material-tab>
+                </material-tabs>
+              </div>
+              
+
+            </div>
+          </material-toolbar>
+          <div style="overflow-y: scroll; height: 60%;">
+            <div ng-repeat="feature in features">
+
+              <button class="menu-item menu-title" ng-class="{active: menu.isSectionSelected(feature)}" 
+                    ng-click="menu.toggleSelectSection(feature)" ink-ripple>
+                      {{feature.name}}
+              </button>
+
+            </div>
+          </div>
+          <div style="margin-top: 15px;">
+            <material-button class="material-button-fab material-theme-light-blue add_new_feature" ng-click="addNewFeature()">
+              <material-icon icon="/static/img/add.svg" style="width: 24px; height: 24px;"></material-icon>
+            </material-button>
+          </div>
+        </material-content>
+
+      </material-sidenav>
+      <div ng-view class="feature-details">
+
+      </div>
+
+      <div class="hidden">
+        <material-toast>
+          <span flex>Hello there!</span>
+          <material-button ng-click="closeToast()">
+            Close
+          </material-button>
+        </material-toast>
+
+      </div>
+   
+    
+    {% endraw %}
+  </body>
+</html>
 
